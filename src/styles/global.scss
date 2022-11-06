@@ -1,0 +1,107 @@
+@use "./base" as *;
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Rubik", sans-serif;
+  font-size: 14px;
+}
+
+button {
+  font-family: "Rubik", sans-serif;
+}
+
+.container {
+  padding: 8px;
+}
+
+.huge-title {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.t-border {
+  width: 100%;
+  margin: 12px 0;
+  border: 1px solid #cccccc;
+  &--bold {
+    border: 1px solid black;
+  }
+}
+
+table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  thead {
+    tr {
+      border-bottom: 1.5px solid black;
+
+      th {
+        padding: 6px 0 12px 0;
+      }
+    }
+  }
+  tbody {
+    tr {
+      border-bottom: 1px solid #cccccc;
+      td {
+        padding: 12px 0;
+      }
+    }
+  }
+}
+
+input,
+textarea {
+  border: 1px solid #cccccc;
+  box-shadow: inset 0px 2px 4px rgba(51, 51, 51, 0.15);
+  border-radius: 4px;
+
+  &:focus-visible {
+    outline: var(--color-blue-primary) auto 1px;
+  }
+}
+
+.search-bar {
+  background: url(../assets/search.svg) no-repeat scroll 7px 5px;
+  padding-left: 38px;
+  height: 36px;
+}
+
+.btn-action {
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  &--primary {
+    color: whitesmoke;
+    background-color: $blue-primary;
+    border: 1px solid $blue-primary;
+
+    &:hover {
+      cursor: pointer;
+      background-color: #1397ab;
+    }
+  }
+
+  &--secondary {
+    color: $blue-primary;
+    background-color: #f7f7f7;
+    border: 1px solid #cccccc;
+
+    &:hover {
+      cursor: pointer;
+      background-color: #e2e2e2;
+    }
+  }
+
+  transition: 0.2s ease-in-out;
+}

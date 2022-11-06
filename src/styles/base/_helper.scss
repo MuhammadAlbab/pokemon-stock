@@ -1,0 +1,192 @@
+@use "./variables" as *;
+
+:root {
+  // Colors
+  --color-blue-primary: #{$blue-primary};
+  --color-green-primary: #{$green-primary};
+}
+
+$spacings: 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36,
+  38, 40;
+// .bg-, .text-, .color- classes handler
+$colors: "blue-primary", "green-primary";
+@each $color in $colors {
+  .text-#{$color},
+  .color-#{$color} {
+    color: var(--color-#{$color}) !important;
+  }
+  .bg-#{$color} {
+    background-color: var(--color-#{$color}) !important;
+  }
+}
+
+$textAlign: "center", "left", "right", "justify";
+@each $ta in $textAlign {
+  .text-a-#{$ta} {
+    text-align: #{$ta};
+  }
+}
+
+$textTranforms: "uppercase", "lowercase", "capitalize";
+@each $tt in $textTranforms {
+  .text-t-#{$tt} {
+    text-transform: #{$tt};
+  }
+}
+
+@each $size in $spacings {
+  .font-#{$size} {
+    font-size: #{$size}px;
+  }
+}
+
+$fontWeights: 400, 600, 700;
+@each $weight in $fontWeights {
+  .font-w-#{$weight} {
+    font-weight: $weight;
+  }
+}
+
+@each $space in $spacings {
+  .m-#{$space} {
+    margin: #{$space}px;
+  }
+  .my-#{$space} {
+    margin-top: #{$space}px;
+    margin-bottom: #{$space}px;
+  }
+  .mx-#{$space} {
+    margin-left: #{$space}px;
+    margin-right: #{$space}px;
+  }
+  .mb-#{$space} {
+    margin-bottom: #{$space}px;
+  }
+  .mt-#{$space} {
+    margin-top: #{$space}px;
+  }
+  .ml-#{$space} {
+    margin-left: #{$space}px;
+  }
+  .mr-#{$space} {
+    margin-right: #{$space}px;
+  }
+
+  .p-#{$space} {
+    padding: #{$space}px;
+  }
+  .py-#{$space} {
+    padding-top: #{$space}px;
+    padding-bottom: #{$space}px;
+  }
+  .px-#{$space} {
+    padding-left: #{$space}px;
+    padding-right: #{$space}px;
+  }
+  .pb-#{$space} {
+    padding-bottom: #{$space}px;
+  }
+  .pt-#{$space} {
+    padding-top: #{$space}px;
+  }
+  .pl-#{$space} {
+    padding-left: #{$space}px;
+  }
+  .pr-#{$space} {
+    padding-right: #{$space}px;
+  }
+}
+
+.mt-auto {
+  margin-top: auto;
+}
+
+.mb-auto {
+  margin-bottom: auto;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.mr-auto {
+  margin-right: auto;
+}
+
+.pt-auto {
+  padding-top: auto;
+}
+
+.pb-auto {
+  padding-bottom: auto;
+}
+
+.pl-auto {
+  padding-left: auto;
+}
+
+.pr-auto {
+  padding-right: auto;
+}
+
+@each $br in $spacings {
+  .radius-#{$br} {
+    border-radius: #{$br}px;
+  }
+}
+
+.flex {
+  display: flex;
+
+  &--wrap {
+    flex-wrap: wrap;
+  }
+
+  &--no-wrap {
+    flex-wrap: nowrap;
+  }
+
+  @each $space in $spacings {
+    &--gap-#{$space} {
+      gap: #{$space}px;
+    }
+  }
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.items-start {
+  align-items: flex-start;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.full-width {
+  width: 100% !important;
+}
+
+.pointer {
+  &:hover {
+    cursor: pointer;
+  }
+}
