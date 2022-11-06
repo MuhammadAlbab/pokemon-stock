@@ -27,17 +27,17 @@ const Detail: FC = () => {
   const [dialogInputAmount, setDialogInputAmounr] = useState<boolean>(false);
 
   useEffect(() => {
-    getDetail(location.state.name);
+    if (location.state) {
+      getDetail(location.state.name);
+    } else {
+      navigate("/");
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const getDetail = (payload: string) => {
     let detail = getDetailPokemon(payload);
-    if (detail) {
-      setDetail(detail);
-    } else {
-      navigate("/");
-    }
+    setDetail(detail);
   };
 
   const handleOpenDialog = () => {

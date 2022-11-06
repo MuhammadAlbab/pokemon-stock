@@ -250,7 +250,7 @@ const DialogInputAmount: FC<Props> = ({
                       Hasil update stok
                     </p>
                     <p className="font-14 m-0 mt-8">
-                      {amountPcs} pcs, {amountDozen} lusin (12s)
+                      {amountPcs} pcs, {amountDozen / 12} lusin (12s)
                     </p>
                   </td>
                   <td className="flex flex--gap-6 items-center justify-end">
